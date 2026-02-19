@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: single-domain-based-applicationset-multienv
+  name: single-domain-claims-applicationset-multienv
   namespace: argocd
 spec:
   generators:
