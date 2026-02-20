@@ -7,23 +7,23 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/selflearner2025/single-domain-based-repo.git
-        revision: test
+        revision: switchenv
         directories:
           - path: jobs/*/*   # matches jobs/dev/claims-management-app and jobs/qa/claims-management-app
   template:
     metadata:
-      name: '{{path[1]}}-{{path.basename}}-application'
-      # e.g. dev-claims-management-app-application, qa-claims-management-app-application
+      name: '{{path[1]}}-{{path.basename}}-application' # 
+     
       labels:
-        env: '{{path[1]}}'           # dev, qa
+        app: '{{path[1]}}'           # 
                 # claims-domain, violations-domain
-        app: '{{path.basename}}'     # claims-management-app, another-claims-app
+        env: '{{path.basename}}'     # claims-management-app, another-claims-app
         managed-by: argocd
     spec:
       project: default
       source:
-        repoURL: https://github.com/selflearner2025/single-domain-based-repo.git
-        targetRevision: test
+        repoURL:  https://github.com/selflearner2025/single-domain-based-repo.git
+        targetRevision: switchenv
         path: '{{path}}'             # e.g. jobs/dev/claims-domain/claims-management-app
       destination:
         server: https://kubernetes.default.svc
