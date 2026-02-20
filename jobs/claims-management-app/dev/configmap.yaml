@@ -4,6 +4,6 @@ metadata:
   name: claims-management-app-cm-dev
 data:
   artifactName: bpmn-poc.tar.gz
-  artifactSha256: "chaning claims"
+  artifactSha256: "chaning claims on friday"
   # command sha256sum bpmn-poc.tar.gz
   artifactUrl: "abcd.efgh"
